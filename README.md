@@ -26,8 +26,11 @@ talk about PurgeCSS (The Good)
     * "Isnt tailwind just inline css???" 
 * Sensical Defaults (Colors, Shadows)
     * Settings 
+    * https://tailwindcss.com/docs/configuration
+    * https://tailwindcss.com/docs/dark-mode
 * What about Responsive Design?
     * Showcase responsive features 
+    * https://tailwindcss.com/docs/responsive-design
 * Configuration
     * Development setup
     * Building  (just in time mode)
