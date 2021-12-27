@@ -21,7 +21,6 @@ talk about PurgeCSS (The Good)
     * Tailwind origins
 * Classic CSS vs. Tailwind
     * First examples
-    * Tailwind compilation
     * (dis)advantage?
 * Inline vs. Tailwind, Or Why not just inline CSS?      
     * "Isnt tailwind just inline css???" 
@@ -31,6 +30,6 @@ talk about PurgeCSS (The Good)
     * Showcase responsive features 
 * Configuration
     * Development setup
-    * Building  
+    * Building  (just in time mode)
 * Our opinion 😎
 
