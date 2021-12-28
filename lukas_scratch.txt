@@ -1,0 +1,3 @@
+npm install -D tailwindcss (-D weil nur für development interessant)
+tailwind.config.js: responsible für configuring tailwindcss
+
