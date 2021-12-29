@@ -36,3 +36,52 @@ talk about PurgeCSS (The Good)
     * Building  (just in time mode)
 * Our opinion 😎
 
+## Code Examples
+
+### Introduction - Utility based CSS は何ですか。
+
+Was ist Utility based CSS?
+Utility
+
+mit tailwind sind 99% aller CSS properties abgedeckt
+
+https://tailwindcss.com/docs/installation
+```html
+<h1 class="text-3xl font-bold underline">
+ Hello world!
+</h1>
+```
+
+Tailwind vs. inline css
+https://tailwindcss.com/docs/utility-first
+
+https://tailwindcss.com/docs/hover-focus-and-other-states
+<button class="md:bg-fuchsia-600 hover:bg-violet-400">
+  Save changes
+</button>
+
+Sensical Defaults
+https://tailwindcss.com/docs/customizing-colors
+https://tailwindcss.com/docs/customizing-spacing
+https://tailwindcss.com/docs/screens
+ur-sexy shadows https://tailwindcss.com/docs/drop-shadow
+
+Responsive Design
+https://tailwindcss.com/docs/responsive-design
+relativ quick eigentlich. nur erklären, dass die breakpoints/media queries über : prefix gehandhabt wird.
+https://tailwindcss.com/docs/screen-readers
+über accessibility reden https://tailwindcss.com/docs/screen-readers
+über dark mode reden
+
+Development setup
+- Tailwind wird mittels npm package installiert.
+- Von da weg setup auf tailwindcss.com befehlen
+- Wird tailwind nicht sehr groß, wenn alle prefixes zur verfügung stehen sollen?
+- Nein, weil tailwind automatisch neu kompiliert wird, sodass die css file, die dann im browser geladen wird, nur die benötigten prefixes enthält.
+
+Our opinion😎
+- CSS ist genau dort, wo es sich strukturell auch befindet bzw. wo es gebraucht wird.
+- Man hat auf Anhieb ein wesentlich besseres Verständniss, wie die das gestylte HTML im Browser aussehen wird.
+- die defaults sind legit einfach ultra geil
+- keine .unnötige-komische-abstrakte-willkürliche-tyrannische-unverständliche CSS Class names (jedes wort auf presentation per click nacheinander einbleden)
+- file sizes ultra klein
