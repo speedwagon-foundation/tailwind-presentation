@@ -143,9 +143,7 @@
             <h1 class="font-extrabold text-3xl pb-4 text-gray-100" id="widget">Widget</h1>
             <h1 class="sr-only">Page title</h1>
             <!-- Main 2 column grid -->
-            <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-2 lg:gap-8">
-
-
+            <div class="grid grid-cols-1 gap-4 pb-8 items-start place-items-stretch lg:grid-cols-2 lg:gap-8">
                 <!-- Left column -->
                 <div class="grid grid-cols-1 gap-4 code" x-data="{showTailwind: false}">
                     <section aria-labelledby="section-1-title">
@@ -162,7 +160,7 @@
                                      @click="showTailwind = true">TailwindCSS
                                 </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 overflow-x-auto">
                                 <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp><div
                                         class="space-y-4">
   <div class="w-96 bg-white shadow rounded">
@@ -250,7 +248,7 @@
                                      @click="showTailwind = true">TailwindCSS
                                 </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 overflow-x-auto">
                                 <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp><div
                                         class="space-y-4">
   <div class="w-96 bg-white shadow rounded">
@@ -321,56 +319,69 @@
                     <section aria-labelledby="section-1-title">
                         <h2 class="sr-only">Section title</h2>
                         <div class="rounded-lg bg-gray-800 overflow-hidden shadow">
-                            <!--                            inline css vs tailwind comparison-->
-                            <div class="flex flex-row items-stretch flex items-center cursor-pointer select-none">
-                                <div class="grow flex items-center justify-center py-2"
-                                     :class="{ 'active-header': !showTailwind, 'inactive-header': showTailwind}"
-                                     @click="showTailwind = false">Default CSS
-                                </div>
-                                <div class="bg-blue-500 grow flex items-center justify-center py-2"
-                                     :class="{'active-header':showTailwind, 'inactive-header': !showTailwind}"
-                                     @click="showTailwind = true">TailwindCSS
-                                </div>
-                            </div>
-                            <div class="p-6">
+                            <div class="p-6 overflow-x-auto">
                                 <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp><div
                                         class="space-y-4">
-  <div class="w-96 bg-white shadow rounded">
-      w-96
-  </div>
-  <div class="w-80 bg-white shadow rounded">
-      w-80
-  </div>
-  <div class="w-72 bg-white shadow rounded">
-      w-72
-  </div>
-  <div class="w-64 bg-white shadow rounded">
-      w-64
-  </div>
-  <div class="w-60 bg-white shadow rounded">
-      w-60
-  </div>
-  <div class="w-56 bg-white shadow rounded">
-      w-56
-  </div>
-  <div class="w-52 bg-white shadow rounded">
-      w-52
-  </div>
-  <div class="w-48 bg-white shadow rounded">
-      w-48
-  </div>
+  Do the tailwind stuff
 </div></xmp></code></pre>
 
                                 <!-- show tailwind code-->
-                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp><div
-                                        class="space-y-4">
-  <div class="w-96 bg-white shadow rounded">
-      w-96
-  </div>
-  <div class="w-80 bg-white shadow rounded">
-      w-80
-  </div>
-</div></xmp></code></pre>
+                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp>
+
+                                    <section class="min-w-full">
+                                    <header class="bg-gray-50 space-y-4 p-4 rounded-t-lg">
+                                        <div class="flex items-center">
+                                            <img class="w-11 h-11 mr-4 rounded-full bg-white hover:border-indigo-500 border-transparent border-2 duration-100 ease-in hover:cursor-pointer"
+                                                 alt="profile picture"
+                                                 src="http://www.canada-work.com/_/rsrc/1531284300421/assistants/female_generic_profile.png">
+                                            <div class="grow">
+                                                <h2 class="font-semibold text-gray-900">Maxine Mustermann</h2>
+                                                <p class="text-gray-400 text-sm">Artist</p>
+                                            </div>
+                                            <button class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-gray-50 font-semibold rounded-full px-6 py-2 flex items-center hover:bg-sky-100 hover:brightness-90">
+                                                <svg width="20" height="20" fill="currentColor" class="mr-2"
+                                                     aria-hidden="true">
+                                                    <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z"/>
+                                                </svg>
+                                                follow
+                                            </button>
+                                        </div>
+
+                                        <form class="group relative">
+                                            <svg width="20" height="20"
+                                                 fill="currentColor"
+                                                 class="absolute left-3 top-1/2 -mt-2.5 text-gray-400 pointer-events-none group-focus-within:text-blue-500"
+                                                 aria-hidden="true">
+                                                <path fill-rule="evenodd"
+                                                      clip-rule="evenodd"
+                                                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+                                            </svg>
+
+                                            <input type="text" name="search" id="search"
+                                                   aria-label="Filter projects"
+                                                   class="focus:ring-2 shadow-sm focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full pl-10 py-2 pr-12 sm:text-sm border-gray-200 rounded-md leading-6"
+                                                   placeholder="Search Posts...">
+                                        </form>
+                                    </header>
+                                    <div class="bg-gray-50 grid grid-cols-2 md:grid-cols-3 gap-4 p-2 rounded-b-lg brightness-on-hover">
+                                        <img class="rounded-md"
+                                             src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
+                                        <img class="rounded-md"
+                                             src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
+                                        <img class="rounded-md"
+                                             src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
+                                        <img class="rounded-md"
+                                             src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
+                                     <img class="rounded-md"
+                                          src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
+                                     <img class="rounded-md"
+                                          src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
+                                    <img class="rounded-md"
+                                         src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
+                                </div>
+                            </section>
+
+                                </xmp></code></pre>
                             </div>
                         </div>
                     </section>
@@ -389,7 +400,7 @@
                                                  alt="profile picture"
                                                  src="http://www.canada-work.com/_/rsrc/1531284300421/assistants/female_generic_profile.png">
                                             <div class="grow">
-                                                <h2 class="font-semibold text-gray-900">Maxi Mustermann</h2>
+                                                <h2 class="font-semibold text-gray-900">Maxine Mustermann</h2>
                                                 <p class="text-gray-400 text-sm">Artist</p>
                                             </div>
                                             <button class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-gray-50 font-semibold rounded-full px-6 py-2 flex items-center hover:bg-sky-100 hover:brightness-90">
@@ -421,13 +432,13 @@
                                         <img class="rounded-md"
                                              src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
                                         <img class="rounded-md"
-                                             src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
+                                             src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
                                         <img class="rounded-md"
-                                             src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
-                                        <img class=" rounded-md"
-                                             src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
+                                             src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
                                         <img class="rounded-md"
-                                             src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
+                                             src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
+                                        <img class="rounded-md"
+                                             src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
                                         <img class="rounded-md"
                                              src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
                                         <img class="rounded-md"
