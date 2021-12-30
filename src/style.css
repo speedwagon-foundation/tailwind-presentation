@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.code {
+    color-scheme: dark;
+}
+
 .link-box > a {
     @apply text-indigo-100 text-sm font-medium rounded-md bg-white bg-opacity-0 px-3 py-2 hover:bg-opacity-10;
 }
@@ -16,6 +20,10 @@
 
 .inactive-header {
     @apply bg-gray-700 text-gray-200 hover:bg-gray-800 hover:text-gray-100;
+}
+
+.brightness-on-hover > img {
+    @apply hover:brightness-75 transition-all duration-100;
 }
 
 /*
