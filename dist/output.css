@@ -757,10 +757,6 @@ select {
   height: 1.5rem;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-11 {
   height: 2.75rem;
 }
@@ -779,10 +775,6 @@ select {
 
 .w-full {
   width: 100%;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .w-96 {
@@ -981,12 +973,12 @@ select {
   border-radius: 0.5rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .rounded-full {
@@ -1172,10 +1164,6 @@ select {
   padding-bottom: 1rem;
 }
 
-.pb-5 {
-  padding-bottom: 1.25rem;
-}
-
 .pr-2 {
   padding-right: 0.5rem;
 }
@@ -1211,20 +1199,12 @@ select {
   line-height: 1.25rem;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-extrabold {
   font-weight: 800;
 }
 
-.font-black {
-  font-weight: 900;
+.font-semibold {
+  font-weight: 600;
 }
 
 .leading-6 {
@@ -1254,21 +1234,6 @@ select {
 .text-gray-50 {
   --tw-text-opacity: 1;
   color: rgb(249 250 251 / var(--tw-text-opacity));
-}
-
-.text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-.text-gray-300 {
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .antialiased {
@@ -1514,17 +1479,74 @@ hue-6-2: #e6c07b
   text-decoration: underline;
 }
 
-/*
+.my-button {
+  padding: 0.75rem;
+  background-color: rgb(134 239 172);
+  border-radius: 0.25rem;
+  margin: 0 auto;
+}
 
-example 1:
-box with border and centered text in middle //show with normal css as well
+.my-button:hover {
+  transform: scale(1.25);
+  transition-duration: 300ms;
+  background-color: rgb(134 239 172 / 100%);
+  border-radius: 0.75rem;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
 
-example 2:
-button with hover and focus// show with normal css as well
+.my-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 2px 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+}
 
-example 3:
-responsive design example with media queries
-*/
+.outer-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.sidebar {
+  background-color: lightcoral;
+  width: 8rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  display: flex;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.search-bar {
+  background-color: lightblue;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content {
+  background-color: lightgreen;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: mediumpurple;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .hover\:scale-125:hover {
   --tw-scale-x: 1.25;

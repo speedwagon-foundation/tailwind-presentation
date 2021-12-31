@@ -76,31 +76,12 @@
 
         <!-- Mobile menu, show/hide based on mobile menu state. -->
         <div class="lg:hidden" >
-            <!--
-              Mobile menu overlay, show/hide based on mobile menu state.
 
-              Entering: "duration-150 ease-out"
-                From: "opacity-0"
-                To: "opacity-100"
-              Leaving: "duration-150 ease-in"
-                From: "opacity-100"
-                To: "opacity-0"
-            -->
             <div class="z-20 fixed inset-0 bg-black bg-opacity-25" x-transition:enter="duration-150 ease-out"
                  x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
                  x-transition:leave="duration-150 ease-in" x-transition:leave-start="opacity-100"
                  x-transition:leave-end="opacity-0" x-show="open" aria-hidden="true" @click="open = false"></div>
 
-            <!--
-              Mobile menu, show/hide based on mobile menu state.
-
-              Entering: "duration-150 ease-out"
-                From: "opacity-0 scale-95"
-                To: "opacity-100 scale-100"
-              Leaving: "duration-150 ease-in"
-                From: "opacity-100 scale-100"
-                To: "opacity-0 scale-95"
-            -->
             <div class="z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full p-2 transition transform origin-top" x-show="open"
                  x-transition:enter="duration-150 ease-out" x-transition:enter-start="opacity-0 scale-95"
                  x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-150 ease-in"
@@ -109,8 +90,9 @@
                     <div class="pt-3 pb-2">
                         <div class="flex items-center justify-between px-4">
                             <div>
-                                <img class="h-8 w-auto"
-                                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+                                <img alt="tailwind logo" height="50" width="50"
+                                     src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg">
+                                </a>
                             </div>
                             <div class="-mr-2">
                                 <button type="button"
@@ -161,44 +143,63 @@
                                 </div>
                             </div>
                             <div class="p-6 overflow-x-auto">
-                                <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp><div
-                                        class="space-y-4">
-  <div class="w-96 bg-white shadow rounded">
-      w-96
-  </div>
-  <div class="w-80 bg-white shadow rounded">
-      w-80
-  </div>
-  <div class="w-72 bg-white shadow rounded">
-      w-72
-  </div>
-  <div class="w-64 bg-white shadow rounded">
-      w-64
-  </div>
-  <div class="w-60 bg-white shadow rounded">
-      w-60
-  </div>
-  <div class="w-56 bg-white shadow rounded">
-      w-56
-  </div>
-  <div class="w-52 bg-white shadow rounded">
-      w-52
-  </div>
-  <div class="w-48 bg-white shadow rounded">
-      w-48
-  </div>
-</div></xmp></code></pre>
+                                <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp>
+
+<div class="chat-notification">
+    <div class="notification-logo">
+        🎉
+    </div>
+    <div class="notification-content">
+        <p class="notification-title">You have a new message!</p>
+        <p class="message-time">18:20</p>
+    </div>
+</div>
+
+<style>
+    .chat-notification {
+        display: flex;
+        max-width: 24rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        background-color: rgb(243 244 246 /0.5);
+        align-items: center;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .notification-logo {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        padding-right: 0.5rem;
+    }
+    .notification-content {
+        margin-left: 1.5rem;
+        padding-top: 0.25rem;
+    }
+    .notification-title {
+        color: #1a202c;
+        font-weight: 600;
+    }
+    .message-time {
+        color: #718096;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+</style>
+
+                                </xmp></code></pre>
 
                                 <!-- show tailwind code-->
-                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp><div
-                                        class="space-y-4">
-  <div class="w-96 bg-white shadow rounded">
-      w-96
-  </div>
-  <div class="w-80 bg-white shadow rounded">
-      w-80
-  </div>
-</div></xmp></code></pre>
+                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp>
+<div class="p-6 max-w-sm mx-auto bg-gray-100 rounded-xl shadow-lg flex items-center space-x-4">
+    <div class="text-xl pr-2">
+    🎉
+    </div>
+    <div>
+        <p class="text-gray font-semibold">You have a new message!</p>
+        <p class="text-gray-400 text-sm">18:20</p>
+    </div>
+</div>
+                                </xmp></code></pre>
                             </div>
                         </div>
                     </section>
@@ -278,15 +279,13 @@
 </div></xmp></code></pre>
 
                                 <!-- show tailwind code-->
-                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp><div
-                                        class="space-y-4">
-  <div class="w-96 bg-white shadow rounded">
-      w-96
-  </div>
-  <div class="w-80 bg-white shadow rounded">
-      w-80
-  </div>
-</div></xmp></code></pre>
+                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp>
+<button class="bg-green-300 rounded p-3 mx-auto
+    hover:bg-green-500 ease-in duration-300 hover:scale-125 hover:rounded-lg
+    focus:outline-none focus:ring focus:ring-violet-300">
+    Click me!
+</button>
+                                </xmp></code></pre>
                             </div>
                         </div>
                     </section>
@@ -320,66 +319,65 @@
                         <h2 class="sr-only">Section title</h2>
                         <div class="rounded-lg bg-gray-800 overflow-hidden shadow">
                             <div class="p-6 overflow-x-auto">
-                                <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp><div
-                                        class="space-y-4">
-  Do the tailwind stuff
-</div></xmp></code></pre>
+                                <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp>
 
-                                <!-- show tailwind code-->
-                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp>
+<section class="min-w-full">
+    <header class="bg-gray-50 space-y-4 p-4 rounded-t-lg">
+       <div class="flex items-center">
+               <img class="w-11 h-11 mr-4 rounded-full bg-white
+                           hover:border-indigo-500 border-transparent border-2 duration-100 ease-in hover:cursor-pointer"
+                    alt="profile picture"
+                    src="...">
+               <div class="grow">
+                   <h2 class="font-semibold text-gray-900">Maxine Mustermann</h2>
+                   <p class="text-gray-400 text-sm">Artist</p>
+               </div>
+               <button class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+                              text-gray-50 font-semibold rounded-full px-6 py-2
+                              flex items-center hover:bg-sky-100 hover:brightness-90">
+                   <svg width="20" height="20" fill="currentColor" class="mr-2"
+                        aria-hidden="true">
+                       <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z"/>
+                   </svg>
+                   follow
+               </button>
+           </div>
 
-                                    <section class="min-w-full">
-                                    <header class="bg-gray-50 space-y-4 p-4 rounded-t-lg">
-                                        <div class="flex items-center">
-                                            <img class="w-11 h-11 mr-4 rounded-full bg-white hover:border-indigo-500 border-transparent border-2 duration-100 ease-in hover:cursor-pointer"
-                                                 alt="profile picture"
-                                                 src="http://www.canada-work.com/_/rsrc/1531284300421/assistants/female_generic_profile.png">
-                                            <div class="grow">
-                                                <h2 class="font-semibold text-gray-900">Maxine Mustermann</h2>
-                                                <p class="text-gray-400 text-sm">Artist</p>
-                                            </div>
-                                            <button class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-gray-50 font-semibold rounded-full px-6 py-2 flex items-center hover:bg-sky-100 hover:brightness-90">
-                                                <svg width="20" height="20" fill="currentColor" class="mr-2"
-                                                     aria-hidden="true">
-                                                    <path d="M10 5a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3H6a1 1 0 1 1 0-2h3V6a1 1 0 0 1 1-1Z"/>
-                                                </svg>
-                                                follow
-                                            </button>
-                                        </div>
+           <form class="group relative">
+               <svg width="20" height="20"
+                    fill="currentColor"
+                    class="absolute left-3 top-1/2 -mt-2.5 text-gray-400
+                           pointer-events-none group-focus-within:text-blue-500"
+                    aria-hidden="true">
+                   <path fill-rule="evenodd"
+                         clip-rule="evenodd"
+                         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
+               </svg>
 
-                                        <form class="group relative">
-                                            <svg width="20" height="20"
-                                                 fill="currentColor"
-                                                 class="absolute left-3 top-1/2 -mt-2.5 text-gray-400 pointer-events-none group-focus-within:text-blue-500"
-                                                 aria-hidden="true">
-                                                <path fill-rule="evenodd"
-                                                      clip-rule="evenodd"
-                                                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
-                                            </svg>
-
-                                            <input type="text" name="search" id="search"
-                                                   aria-label="Filter projects"
-                                                   class="focus:ring-2 shadow-sm focus:ring-indigo-500 focus:outline-none focus:border-indigo-500 block w-full pl-10 py-2 pr-12 sm:text-sm border-gray-200 rounded-md leading-6"
-                                                   placeholder="Search Posts...">
-                                        </form>
-                                    </header>
-                                    <div class="bg-gray-50 grid grid-cols-2 md:grid-cols-3 gap-4 p-2 rounded-b-lg brightness-on-hover">
-                                        <img class="rounded-md"
-                                             src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
-                                        <img class="rounded-md"
-                                             src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
-                                        <img class="rounded-md"
-                                             src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
-                                        <img class="rounded-md"
-                                             src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
-                                     <img class="rounded-md"
-                                          src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80">
-                                     <img class="rounded-md"
-                                          src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
-                                    <img class="rounded-md"
-                                         src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80">
-                                </div>
-                            </section>
+               <input type="text" name="search" id="search"
+                      aria-label="Filter projects"
+                      class="focus:ring-2 shadow-sm focus:ring-indigo-500 focus:outline-none focus:border-indigo-500
+                             block w-full pl-10 py-2 pr-12 sm:text-sm border-gray-200 rounded-md leading-6"
+                      placeholder="Search Posts...">
+           </form>
+       </header>
+       <div class="bg-gray-50 grid grid-cols-2 md:grid-cols-3 gap-4 p-2 rounded-b-lg brightness-on-hover">
+           <img class="rounded-md"
+                src="...">
+           <img class="rounded-md"
+                src="...">
+           <img class="rounded-md"
+                src="...">
+           <img class="rounded-md"
+                src="...">
+            <img class="rounded-md"
+                src="...">
+             <img class="rounded-md"
+                src="...">
+            <img class="rounded-md"
+                src="...">
+    </div>
+</section>
 
                                 </xmp></code></pre>
                             </div>
@@ -473,51 +471,96 @@
                                 </div>
                             </div>
                             <div class="p-6 overflow-x-auto">
-                                <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp><div
-                                        class="space-y-4">
-  <div class="w-96 bg-white shadow rounded">
-      w-96
-  </div>
-  <div class="w-80 bg-white shadow rounded">
-      w-80
-  </div>
-  <div class="w-72 bg-white shadow rounded">
-      w-72
-  </div>
-  <div class="w-64 bg-white shadow rounded">
-      w-64
-  </div>
-  <div class="w-60 bg-white shadow rounded">
-      w-60
-  </div>
-  <div class="w-56 bg-white shadow rounded">
-      w-56
-  </div>
-  <div class="w-52 bg-white shadow rounded">
-      w-52
-  </div>
-  <div class="w-48 bg-white shadow rounded">
-      w-48
-  </div>
-</div></xmp></code></pre>
+                                <pre x-show="!showTailwind"><code class="bg-white language-html"><xmp>
+
+<div class="outer-wrapper">
+   <div class="sidebar">
+       <p>Sidebar</p>
+   </div>
+   <div class="content-wrapper">
+         <div class="search-bar">
+             <p>Search Bar</p>
+         </div>
+         <div class="main-content">
+             <p class="py-8">Main Content</p
+             ></div>
+         <div class="footer">
+             <p>Footer</p>
+         </div>
+   </div>
+</div>
+<style>
+ .outer-wrapper {
+     height: 100%;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     flex-grow: 1;
+ }
+
+ .sidebar {
+     background-color: lightcoral;
+     width: 8rem;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+     text-align: center;
+     display: flex;
+ }
+
+ .content-wrapper {
+     display: flex;
+     flex-direction: column;
+     flex-grow: 1;
+ }
+
+ .search-bar {
+     background-color: lightblue;
+     height: 4rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .main-content {
+     background-color: lightgreen;
+     display: flex;
+     flex-grow: 1;
+     justify-content: center;
+     align-items: center;
+ }
+ .footer {
+     background-color: mediumpurple;
+     height: 4rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+</style>
+                                </xmp></code></pre>
 
                                 <!-- show tailwind code-->
-                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp><div
-                                        class="space-y-4">
-<section aria-labelledby="section-2-title">
-           <h2 class="sr-only">Section title</h2>
-           <div class="rounded-lg bg-white overflow-hidden shadow h-full">
-               <div class="h-full w-full flex-grow flex flex-row">
-                   <div class="bg-red-500 w-32 text-center h-full flex justify-center items-center"><p>Sidebar</p></div>
-                   <div class="flex flex-col flex-grow">
-                         <div class="bg-blue-500 h-16 flex justify-center items-center"><p>Search Bar</p></div>
-                         <div class="bg-green-500 flex-grow flex justify-center items-center"><p class="py-8">Main Content</p></div>
-                         <div class="bg-purple-500 h-16 flex justify-center items-center"><p>Footer</p></div>
-                     </div>
-                 </div>
-           </div>
-</section>
-</div></xmp></code></pre>
+                                <pre x-show="showTailwind"><code class="bg-white language-html"><xmp>
+
+<div class="h-full w-full flex-grow flex flex-row">
+   <div class="bg-red-500 w-32 text-center h-full flex justify-center items-center">
+       <p>Sidebar</p>
+   </div>
+   <div class="flex flex-col flex-grow">
+         <div class="bg-blue-500 h-16 flex justify-center items-center">
+             <p>Search Bar</p>
+         </div>
+         <div class="bg-green-500 flex-grow flex justify-center items-center">
+             <p class="py-8">Main Content</p
+             ></div>
+         <div class="bg-purple-500 h-16 flex justify-center items-center">
+             <p>Footer</p>
+         </div>
+   </div>
+</div>
+
+</xmp></code></pre>
                             </div>
                         </div>
                     </section>
@@ -546,5 +589,6 @@
         </div>
     </main>
 </div>
+<button class="my-button">click me!</button>
 </body>
 </html>
