@@ -135,11 +135,10 @@ hue-6-2: #e6c07b
 .my-button:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
-    --tw-ring-offset-width: 2px;
-    --tw-ring-offset-color: #fff;
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-shadow) rgb(196 181 253);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 5px rgb(196 181 253);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+    --ring-offset-shadow: inset 0 0 0 2px rgb(196 181 253);
+    --ring-shadow: inset 0 0 0 5px rgb(196 181 253);
+    --shadow:  0 0 #0000;
+    box-shadow: var(--ring-offset-shadow), var(--ring-shadow),  var(--shadow);
 }
 
 .outer-wrapper {
